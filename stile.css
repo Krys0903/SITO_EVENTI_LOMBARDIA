@@ -1,0 +1,257 @@
+@import url("https://fonts.googleapis.com/css2?family=Rubik&display=swap");
+ * {
+     margin: 0;
+     padding: 0;
+     box-sizing: border-box;
+     font-family: Arial, sans-serif;
+}
+ nav {
+     height: 70px;
+     background: rgb(20, 20, 20);
+     color:white;
+     padding: 0 2rem;
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+     position: sticky;
+     top: 0;
+}
+ .nav-items, .overview, .account {
+     display: flex;
+}
+ .overview {
+     margin-right: 4rem;
+}
+ .logo h2 {
+     text-decoration: overline;
+     font-style: italic;
+     color: green;
+     margin: 0 0.5rem;
+}
+ nav li {
+     list-style: none;
+     margin: 0 0.5rem;
+}
+ nav a {
+     text-decoration: none;
+     color: white;
+}
+ nav a:hover {
+     color: green;
+}
+ nav a::after {
+     content: "";
+     display: block;
+     height: 3px;
+     background: green;
+     width: 0%;
+     transition: all ease-in-out 300ms;
+}
+ nav a:hover::after {
+     width: 100%;
+}
+ nav svg, .nav-items h3, #check, .menu {
+     display: none;
+}
+ .nav-items {
+     position: fixed;
+     top: 0;
+     right: -250px;
+     height: 100vh;
+     width: 250px;
+     flex-direction: column;
+     justify-content: space-evenly;
+     background: rgb(20, 20, 20);
+     padding: 2rem;
+     transition: all ease-in-out 500ms;
+}
+ .overview, .account {
+     flex-direction: column;
+     width: auto;
+}
+ .overview {
+     margin: 0;
+}
+ .nav-items h3 {
+     display: inline-block;
+     font-weight: 400;
+     text-transform: uppercase;
+     font-size: 13px;
+     margin-bottom: 1rem;
+}
+ nav svg {
+     display: inline-block;
+     cursor: pointer;
+     vertical-align: top;
+}
+ nav li {
+     margin: 1rem 0;
+}
+ nav a {
+     display: inline-block;
+}
+ nav a:hover {
+     margin-left: 2px;
+     transition: all ease-in-out 300ms;
+}
+ .menu {
+     display: inline-block;
+     position: fixed;
+     right: 2.5rem;
+     z-index: 99;
+}
+ #check:checked ~ .nav-items {
+     right: 0;
+}
+/* -------------------- */
+ #sezione {
+     position: absolute;
+     width: 100vw;
+     height: 80vh;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     gap: 2px;
+     flex-wrap: wrap;
+     overflow: hidden;
+     z-index: -1;
+}
+ #sezione::before {
+     content: '';
+     position: absolute;
+     width: 100vw;
+     height:80vh;
+     background-color: white;
+     z-index: -1;
+}
+ #sezione span {
+     position: relative;
+     display: block;
+     width: calc(6.25vw - 2px);
+     height: calc(6.25vw - 2px);
+     background: #181818;
+     z-index: -1;
+     transition: 1.5s;
+}
+ #sezione .signin {
+     position: absolute;
+     width: 400px;
+     background: #222;
+     z-index: 1000;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     padding: 40px;
+     border-radius: 10px;
+     box-shadow: 0 15px 35px rgba(0,0,0,9);
+}
+ #sezione .signin .content {
+     position: relative;
+     width: 100%;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     flex-direction: column;
+     gap: 40px;
+}
+ #sezione .signin .content h2 {
+     font-size: 2em;
+     color: green;
+     text-transform: uppercase;
+}
+ #sezione .signin .content .formRoba {
+     width: 100%;
+     display: flex;
+     flex-direction: column;
+     gap: 25px;
+}
+ #sezione .signin .content .formRoba .inputBox {
+     position: relative;
+     width: 100%;
+}
+ #sezione .signin .content .formRoba .inputBox input {
+     position: relative;
+     width: 100%;
+     background: #333;
+     border: none;
+     outline: none;
+     padding: 25px 10px 7.5px;
+     border-radius: 4px;
+     color: #fff;
+     font-weight: 500;
+     font-size: 1em;
+}
+ #sezione .signin .content .formRoba .inputBox i {
+     position: absolute;
+     left: 0;
+     padding: 15px 10px;
+     font-style: normal;
+     color: #aaa;
+     transition: 0.5s;
+     pointer-events: none;
+}
+ #sezione .signin .content .formRoba .inputBox input:focus ~ i, #sezione .signin .content .formRoba .inputBox input:valid ~ i {
+     transform: translateY(-7.5px);
+     font-size: 0.8em;
+     color: #fff;
+}
+ #sezione .signin .content .formRoba .links {
+     position: relative;
+     width: 100%;
+     display: flex;
+     justify-content: space-between;
+}
+ #sezione .signin .content .formRoba .links a {
+     color: #fff;
+     text-decoration: none;
+}
+ #sezione .signin .content .formRoba .links a:nth-child(1) {
+     color: green;
+     font-weight: 600;
+}
+ #sezione .signin .content .formRoba .inputBox input[type="submit"] {
+     padding: 10px;
+     background: green;
+     color: #000;
+     font-weight: 600;
+     font-size: 1.35em;
+     letter-spacing: 0.05em;
+     cursor: pointer;
+}
+ #sezione .inputBox input[type="submit"]:hover {
+     border: 1px solid black;
+}
+ #sezione .signin .content .formRoba .inputBox input[type="submit"]:hover {
+     padding: 10px;
+     background: darkgreen;
+     color: #000;
+     font-weight: 600;
+     font-size: 1.35em;
+     letter-spacing: 0.05em;
+     cursor: pointer;
+}
+/* ALERT */
+ .alert {
+     position: fixed;
+     top:0;
+     left: 0;
+     width: 100%;
+     height: 100%;
+     background-color: rgba(0, 0, 0, 0.5);
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     z-index: 1000;
+}
+ .hidden {
+     display: none;
+}
+ .alertContent {
+     background-color: #f0f0f0;
+     padding: 20px;
+     border-radius: 5px;
+     text-align: center;
+     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+     position: relative;
+     animation: slideDown 0.4s ease;
+}
